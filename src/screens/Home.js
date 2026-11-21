@@ -11,6 +11,11 @@ export default function Home({navigation}) {
         title='Go to About Screen'
         onPress={() => navigation.navigate('AboutTab')}
       ></Button>
+
+      <Button
+        title='Open Drawer'
+        onPress={() => navigation.openDrawer()}
+      ></Button>
     </View>
   )
 }
