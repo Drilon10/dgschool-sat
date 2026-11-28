@@ -1,21 +1,32 @@
-import { View, Text, Button, StyleSheet} from 'react-native'
+import { View, Text, Button, StyleSheet, Image} from 'react-native'
 import React from 'react'
+import Swiper from 'react-native-swiper'
 
 export default function Home({navigation}) {
   return (
     <View style={styles.container}>
+
+        <View style={styles.sliderContainer}>
+          <Swiper
+            autoplay
+            activeDotColor='#22d4ff'
+            autoplayTimeout={5}
+          >
+            <View style={styles.item}>
+              <Image
+                source={require('../../assets/tetova.jpg')}
+              ></Image>
+            </View>
+
+            <View style={styles.item}>
+              <Image
+                source={require('../../assets/kicevo.jpg')}
+              ></Image>
+            </View>
+
+          </Swiper>
+        </View>
       
-      <Text style={styles.title}>Home</Text>
-
-      <Button
-        title='Go to About Screen'
-        onPress={() => navigation.navigate('AboutTab')}
-      ></Button>
-
-      <Button
-        title='Open Drawer'
-        onPress={() => navigation.openDrawer()}
-      ></Button>
     </View>
   )
 }
